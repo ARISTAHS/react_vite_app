@@ -1,6 +1,13 @@
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import { createGlobalStyle } from 'styled-components';
 import reset from "styled-reset";
+import Layout from "./components/layout";
+import Home from "./pages/home";
+import About from "./pages/about";
+import Product from "./pages/product";
+import Contact from "./pages/contact";
+import Login from "./pages/login";
+import Intro from "./pages/intro";
 
 //전역 css + 리셋
 const GlobalStyle = createGlobalStyle`
@@ -54,11 +61,21 @@ const GlobalStyle = createGlobalStyle`
 const router = createBrowserRouter([
   {
     path: "/",
-    element: <div>Home Page</div>, // 임시로 Home Page 컴포넌트
+    element: <Layout/>,
+    children: [
+      { path: "" , element: <Home />},
+      { path: "about" , element: <About />},
+      { path: "Product" , element: <Product />},
+      { path: "contact" , element: <Contact />},
+    ],
   },
   {
-    path: "/about",
-    element: <div>About Page</div>, // 임시로 About Page 컴포넌트
+    path: "/login",
+    element: <Login />, // 임시로 About Page 컴포넌트
+  },
+  {
+    path: "/intro",
+    element: <Intro />,
   },
 ]);
 

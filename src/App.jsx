@@ -1,7 +1,7 @@
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import { createGlobalStyle } from 'styled-components';
 import reset from "styled-reset";
-import Layout from "./components/layout";
+import Layout from "./components/common/layout";
 import Home from "./pages/home";
 import About from "./pages/about";
 import Product from "./pages/product";
@@ -71,7 +71,7 @@ const router = createBrowserRouter([
   },
   {
     path: "/login",
-    element: <Login />, // 임시로 About Page 컴포넌트
+    element: <Login />, //로그인과 인트로는 별도 라우터 구분
   },
   {
     path: "/intro",

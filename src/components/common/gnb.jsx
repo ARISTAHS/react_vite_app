@@ -24,7 +24,7 @@ const Li = styled.li`
   }
 `;
 
-export default function GNB() {
+export default function Gnb() {
 
   const navLi = [
     { label : "Home" , path : "/"},

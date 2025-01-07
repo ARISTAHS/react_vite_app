@@ -4,6 +4,8 @@ import { Link } from "react-router-dom";
 const FooterWrapper = styled.footer`
   background-color: #111;
   position: relative;
+  bottom: 0;
+  left: 0;
   z-index: 100;
 `;
 

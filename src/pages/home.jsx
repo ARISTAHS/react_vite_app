@@ -1,7 +1,9 @@
-import Layout from '../components/common/layout';
+//import Layout from '../components/common/layout';
 
 export default function Home(){
   return(
-    <Layout></Layout>
+    <div>
+      <h1>Welcome to the Home Page!</h1>
+    </div>
   );
 }

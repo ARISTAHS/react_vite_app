@@ -9,6 +9,28 @@ import Contact from "./pages/contact";
 import Login from "./pages/login";
 import Intro from "./pages/intro";
 
+//라우터 설정
+const router = createBrowserRouter([
+  {
+    path: "/",
+    element: <Layout/>,
+    children: [
+      { path: "" , element: <Home />},
+      { path: "about" , element: <About />},
+      { path: "product" , element: <Product />},
+      { path: "contact" , element: <Contact />},
+    ],
+  },
+  {
+    path: "/login",
+    element: <Login />, //로그인과 인트로는 별도 라우터 구분
+  },
+  {
+    path: "/intro",
+    element: <Intro />,
+  },
+]);
+
 //전역 css + 리셋
 const GlobalStyle = createGlobalStyle`
   ${reset};
@@ -57,28 +79,6 @@ const GlobalStyle = createGlobalStyle`
 
 `;
 
-//라우터 설정
-const router = createBrowserRouter([
-  {
-    path: "/",
-    element: <Layout/>,
-    children: [
-      { path: "" , element: <Home />},
-      { path: "about" , element: <About />},
-      { path: "Product" , element: <Product />},
-      { path: "contact" , element: <Contact />},
-    ],
-  },
-  {
-    path: "/login",
-    element: <Login />, //로그인과 인트로는 별도 라우터 구분
-  },
-  {
-    path: "/intro",
-    element: <Intro />,
-  },
-]);
-
 function App() {
   
   return (
@@ -89,4 +89,4 @@ function App() {
   )
 }
 
-export default App
+export default App;

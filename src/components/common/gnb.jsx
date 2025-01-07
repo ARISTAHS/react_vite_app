@@ -27,10 +27,10 @@ const Li = styled.li`
 export default function Gnb() {
 
   const navLi = [
-    { label : "Home" , path : "/"},
-    { label : "About" , path : "/about"},
-    { label : "Product" , path : "/products"},
-    { label : "Contact" , path : "/contact"},
+    { label : "Home" , path : ""},
+    { label : "About" , path : "about"},
+    { label : "Product" , path : "product"},
+    { label : "Contact" , path : "contact"},
   ];
 
   return (

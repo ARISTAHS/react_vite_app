@@ -34,7 +34,7 @@ export default function Header(){
       <Logo>
         <Link to='/'><img src="" alt="" /></Link>
       </Logo>
-
+    
       <Gnb />
     </HeaderWrapper>
   );

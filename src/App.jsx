@@ -1,13 +1,12 @@
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import { createGlobalStyle } from 'styled-components';
 import reset from "styled-reset";
-import Layout from "./components/common/layout";
+import Layout from "./components/layout";
 import Home from "./pages/home";
 import About from "./pages/about";
-import Product from "./pages/product";
-import Contact from "./pages/contact";
-import Login from "./pages/login";
-import Intro from "./pages/intro";
+// import Product from "./pages/product";
+// import Contact from "./pages/contact";
+
 
 //라우터 설정
 const router = createBrowserRouter([
@@ -17,18 +16,11 @@ const router = createBrowserRouter([
     children: [
       { path: "" , element: <Home />},
       { path: "about" , element: <About />},
-      { path: "product" , element: <Product />},
-      { path: "contact" , element: <Contact />},
+      // { path: "product" , element: <Product />},
+      // { path: "contact" , element: <Contact />},
     ],
   },
-  {
-    path: "/login",
-    element: <Login />, //로그인과 인트로는 별도 라우터 구분
-  },
-  {
-    path: "/intro",
-    element: <Intro />,
-  },
+ 
 ]);
 
 //전역 css + 리셋
@@ -51,6 +43,7 @@ const GlobalStyle = createGlobalStyle`
     text-decoration: none;
     color: inherit;
   }
+  
   a:focus {
   outline: 2px dashed #fff;
   outline-offset: 4px;

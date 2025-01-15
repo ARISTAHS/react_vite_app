@@ -1,7 +1,7 @@
 import styled from "styled-components";
 import Gnb from './gnb';
 import { Link } from "react-router-dom";
-import mainLogo from '../../assets/logo_main.png'
+import logoBlack from '../../assets/main_logo_black.png';
 
 const HeaderWrapper = styled.header`
   width: 100%;
@@ -27,11 +27,13 @@ const Logo = styled.h1`
   height: 100%;
 
   a{
+    width: 100px;
     display: flex;
     align-items: center;
-    height: 100%;
+    height: 100px;
     img{
       width: 100%;
+      border-radius: 50%;
     }
   }
 `;
@@ -41,7 +43,7 @@ export default function Header(){
     <HeaderWrapper>
       <HeaderWrap>
         <Logo>
-          <Link to='/'><img src={mainLogo} alt="프리모상사 로고" /></Link>
+          <Link to='/'><img src={logoBlack} alt="프리모상사 로고" /></Link>
         </Logo>
       
         <Gnb />

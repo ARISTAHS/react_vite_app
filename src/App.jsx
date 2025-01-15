@@ -4,8 +4,8 @@ import reset from "styled-reset";
 import Layout from "./components/layout";
 import Home from "./pages/home";
 import About from "./pages/about";
-// import Product from "./pages/product";
-// import Contact from "./pages/contact";
+import Product from "./pages/product";
+import Contact from "./pages/contact";
 
 
 //라우터 설정
@@ -16,8 +16,8 @@ const router = createBrowserRouter([
     children: [
       { path: "" , element: <Home />},
       { path: "about" , element: <About />},
-      // { path: "product" , element: <Product />},
-      // { path: "contact" , element: <Contact />},
+      { path: "product" , element: <Product />},
+      { path: "contact" , element: <Contact />},
     ],
   },
  

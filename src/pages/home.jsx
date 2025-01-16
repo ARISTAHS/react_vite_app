@@ -1,9 +1,20 @@
-//import Layout from '../components/common/layout';
+import styled from "styled-components";
+import mainImg from '../assets/mainvisual.jpg';
+
+const MainVisual = styled.div`
+  max-width: 1920px;
+  height: 1000px;
+  img{
+    width: 100%;
+  }
+`;
+
+
 
 export default function Home(){
   return(
-    <div>
-      <h1>Welcome to the Home Page!</h1>
-    </div>
+    <MainVisual>
+      <img src={mainImg} alt="메인이미지" />
+    </MainVisual>
   );
 }

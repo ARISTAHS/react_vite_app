@@ -47,18 +47,26 @@ const FooterInfo = styled.div`
     li{
       font-weight: 600;
       font-size: 1.125rem;
-      p{
-
-      }
     }
   }
 
   address{
-    
+    margin-bottom: 0.5rem;
+    display: flex;
+    flex-wrap: wrap;
+
     p{
-      /* color: #fff; */
+      flex: 0 0 calc(50% - 10px);
+      padding-bottom: 0.325rem;
       strong{
-        color: #fcfcfc;
+        color: rgba(255, 255, 255, 0.5);
+        font-weight: 400;
+        margin-right: 0.625rem;
+      }
+      span{
+        font-weight: 500;
+        color: #fff;
+        font-size: 1.1rem;
       }
     }
   }
@@ -67,11 +75,9 @@ const FooterInfo = styled.div`
 const CopyRight = styled.div`
   
   p{
-    color: white;
+    color: rgba(255, 255, 255, 0.5);
+    letter-spacing: -0.03em;
     line-height: 1.3;
-    span{
-
-    }
   }
 `;
 
@@ -97,29 +103,29 @@ export default function Footer(){
           <address>
             <p>
               <strong>주소</strong>
-              <span></span>
+              <span>서울특별시 강동구 양재대로 85길 30 이성빌딩 303호</span>
             </p>
             <p>
               <strong>우편번호</strong>
-              <span></span>
+              <span>05405</span>
             </p>
             <p>
               <strong>전화</strong>
-              <span></span>
+              <span>02-474-0697~8</span>
+            </p>
+            <p>
+              <strong>E-mail</strong>
+              <span>primosports@hotmail.com</span>
             </p>
             <p>
               <strong>팩스</strong>
-              <span></span>
-            </p>
-            <p>
-              <strong>팩스</strong>
-              <span></span>
+              <span>02-483-0272</span>
             </p>
           </address>
 
           <CopyRight>
-            <p><span>&copy;</span> 2025. Primo Sports. All rights reserved. <br />
-            | 본 사이트는 개인 포트폴리오 프로젝트로 상업적 목적이 아닌 학습 목적으로 제작되었습니다.</p>
+            <p>&copy; 2025. Primo Sports. All rights reserved. <br />
+            * 본 사이트는 개인 포트폴리오 프로젝트로 상업적 목적이 아닌 학습 목적으로 제작되었습니다.</p>
           </CopyRight>
 
         </FooterInfo>

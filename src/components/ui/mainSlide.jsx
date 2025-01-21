@@ -13,7 +13,9 @@ const SlideImage = styled.img`
   position: absolute;
   top: 0;
   left: 0;
-  transition: opacity 0.5s ease-in-out;
+  opacity: ${(props) => (props.isActive ? 1 : 0)}; //투명도 1 혹은 0
+  z-index: ${(props) => (props.isActive ? 1 : 0)};
+  transition: opacity .5s ease-in-out; /* 페이드 효과를 위한 전환 시간 */
 `;
 
 export default function MainSlide(){
@@ -39,9 +41,7 @@ export default function MainSlide(){
           key={index}
           src={image}
           alt={`Slide ${index + 1}`}
-          style={{
-            display: index === imgIndex ? "block" : "none",
-          }}
+          isActive={index === imgIndex} // 현재 활성 상태 여부 전달
         />
       ))}
     </>

@@ -42,7 +42,7 @@ const FooterInfo = styled.div`
     display: flex;
     align-items: flex-start;
     justify-content: flex-start;
-    gap: 30rem;
+    gap: 3rem;
     margin-bottom: 1.875rem;
     li{
       font-weight: 600;

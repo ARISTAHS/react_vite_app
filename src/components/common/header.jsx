@@ -23,7 +23,7 @@ const HeaderWrap = styled.div`
 const Logo = styled.h1`
   display: block;
   /* width: 120px; */
-  border: 1px solid #111;
+  /* border: 1px solid #111; */
   height: 100%;
 
   a{

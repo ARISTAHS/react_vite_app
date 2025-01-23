@@ -70,6 +70,13 @@ const GlobalStyle = createGlobalStyle`
     display: none;
   }
 
+  /* 메인 공통 css */
+  .container{
+    max-width: 1920px;
+    margin: 0 auto 100px;
+    position: relative;
+  }
+
 `;
 
 function App() {

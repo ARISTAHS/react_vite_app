@@ -1,6 +1,7 @@
 import styled from "styled-components";
 // import mainImg from '../assets/mainvisual.jpg';
 import Slider from '../components/ui/mainSlide';
+import { Link } from "react-router-dom";
 
 const MainVisual = styled.div`
   /* max-width: 1920px; */
@@ -61,6 +62,21 @@ export default function Home(){
             <p>독일 기술로 탄생한 최상의 펜싱 장비 <br />
             <strong>&apos;allstar&apos;</strong>와 함께 당신의 승리를 준비하세요</p>
           </div>
+
+          <div className="tab_wrap">
+            <div className="tab_left">
+              <ul>
+                <li><span></span></li>
+                <li><span></span></li>
+                <li><span></span></li>
+              </ul>
+              <Link to='../pages/product.jsx'>전체보기</Link>
+            </div>
+            <div className="tab_right">
+
+            </div>
+          </div>
+
         </div>
       </Content_1>
     </>

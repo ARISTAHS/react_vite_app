@@ -40,7 +40,58 @@ const MainVisual = styled.div`
 
 const Content_1 = styled.div`
   
+  .product_content{
+
+    .sec_top{
+      display: flex;
+      align-items: center;
+      gap: 1.875rem;
+
+      h2{
+        font-weight: 700;
+        font-size: 3.75rem;
+        color: #000;
+      }
+      p{
+        font-size: 1.125rem;
+        line-height: 1.25;
+        strong{
+          color: red;
+          font-size: 1.8rem;
+          font-weight: 600;
+        }
+      }
+    }
+  }
   
+  .tab_wrap{
+    margin-top: 3.125rem;
+    display: flex;
+    justify-content: space-between;
+    gap: 1.25rem;
+
+    .tab_left{
+      width: 18.75rem;
+      padding: 3.125rem 0;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      gap: 1.25rem;
+      ul{
+        li{
+          span{
+
+          }
+        }
+      }
+      a{
+
+      }
+    }
+    .tab_right{
+
+    }
+  }
 
 `;
 
@@ -66,13 +117,22 @@ export default function Home(){
           <div className="tab_wrap">
             <div className="tab_left">
               <ul>
-                <li><span></span></li>
-                <li><span></span></li>
-                <li><span></span></li>
+                <li><span>Foil</span></li>
+                <li><span>Epee</span></li>
+                <li><span>Sabre</span></li>
               </ul>
-              <Link to='../pages/product.jsx'>전체보기</Link>
+              <Link to='../pages/product.jsx'>More View</Link>
             </div>
             <div className="tab_right">
+
+              <div className="inner">
+                <div className="img_box">
+                  <img src="../assets/epee_1.jpg" alt=".." />
+                </div>
+                <div className="txt_box">
+                  <Link to='../pages/product.jsx'>More View</Link>
+                </div>
+              </div>
 
             </div>
           </div>

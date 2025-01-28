@@ -2,6 +2,7 @@ import styled from "styled-components";
 // import mainImg from '../assets/mainvisual.jpg';
 import Slider from '../components/ui/mainSlide';
 import { Link } from "react-router-dom";
+import { useState } from "react";
 
 const MainVisual = styled.div`
   /* max-width: 1920px; */
@@ -78,11 +79,8 @@ const Content_1 = styled.div`
       justify-content: space-between;
       gap: 1.25rem;
       ul{
-        li{
-          span{
-
-          }
-        }
+        overflow: hidden;
+        border-radius: 3.75rem 0 3.75rem 0;
       }
       a{
 
@@ -95,8 +93,30 @@ const Content_1 = styled.div`
 
 `;
 
+const MenuButton = styled.button`
+  width: 100%;
+  height: 8.75rem;
+  padding: 2.5rem;
+  transition: all 0.3s;
+  font-weight: 700;
+  font-size: 1.125rem;
+  text-align: center;
+  transition: all 0.3s;
+  
+  //props 로 css 관리
+  border: 2px solid ${props => props.$active ? "#41b79b" : "#f2f2f2"};
+  background-color: ${props => props.$active ? "#41b79b" : "#f2f2f2"};
+  color: ${props => props.$active ? "white" : "black"};
+`;
+
+
 
 export default function Home(){
+
+  const menu = ['Foil', 'Epee', 'Sabre'];
+  const [activeButton, setActiveButton] = useState(menu[0]);
+
+
   return(
     <>
       <MainVisual className="container">
@@ -117,14 +137,22 @@ export default function Home(){
           <div className="tab_wrap">
             <div className="tab_left">
               <ul>
-                <li><span>Foil</span></li>
-                <li><span>Epee</span></li>
-                <li><span>Sabre</span></li>
+                {menu.map((button) => (
+                  <li key={button}>
+                    <MenuButton
+                      $active={activeButton === button}
+                      onClick={()=> setActiveButton(button)}
+                      type="button"
+                    >
+                      {button}
+                    </MenuButton>
+                  </li>
+                ))}
               </ul>
               <Link to='../pages/product.jsx'>More View</Link>
             </div>
-            <div className="tab_right">
 
+            <div className="tab_right">
               <div className="inner">
                 <div className="img_box">
                   <img src="../assets/epee_1.jpg" alt=".." />

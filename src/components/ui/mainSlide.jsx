@@ -1,7 +1,7 @@
 import { useState,useEffect } from "react";
 import styled from "styled-components";
-import Img_1 from '../../assets/mainvisual_1.jpg';
-import Img_2 from '../../assets/mainvisual_2.jpg';
+import Img_1 from '/assets/mainvisual_1.jpg';
+import Img_2 from '/assets/mainvisual_2.jpg';
 // import Pagination from "./pagination";
 
 //이미지 배열 생성

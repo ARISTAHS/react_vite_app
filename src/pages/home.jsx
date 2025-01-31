@@ -1,6 +1,7 @@
 import styled from "styled-components";
 import Slider from '../components/ui/mainSlide';
 import MoreButton from "../components/ui/Link";
+import ProductList from "../components/ui/productData";
 import { useState } from "react";
 
 const MainVisual = styled.div`
@@ -83,7 +84,8 @@ const Content_1 = styled.div`
       }
     }
     .tab_right{
-
+      flex: 1;  // 남은 공간 모두 차지
+      align-items: center;
     }
   }
 
@@ -148,14 +150,8 @@ export default function Home(){
             </div>
 
             <div className="tab_right">
-              <div className="inner">
-                <div className="img_box">
-                  <img src="../assets/epee_1.jpg" alt=".." />
-                </div>
-                <div className="txt_box">
-                  <MoreButton />
-                </div>
-              </div>
+                <ProductList />
+             
 
             </div>
           </div>

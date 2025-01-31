@@ -1,7 +1,7 @@
 import styled from "styled-components";
 import Gnb from './gnb';
 import { Link } from "react-router-dom";
-import logoBlack from '../../assets/main_logo_black.png';
+import logoBlack from '/assets/main_logo_black.png';
 
 const HeaderWrapper = styled.header`
   width: 100%;

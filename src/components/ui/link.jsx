@@ -19,8 +19,8 @@ const MoreView = styled(Link)`
   }
 `;
 
-export default function MoreButton(){
+export default function MoreButton({to = '/pages/product'}){
   return(
-    <MoreView to='../pages/product.jsx'>More View</MoreView>
+    <MoreView to={to}>More View</MoreView>
   );
 }

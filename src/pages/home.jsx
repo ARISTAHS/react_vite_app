@@ -1,7 +1,6 @@
 import styled from "styled-components";
-// import mainImg from '../assets/mainvisual.jpg';
 import Slider from '../components/ui/mainSlide';
-import { Link } from "react-router-dom";
+import MoreButton from "../components/ui/Link";
 import { useState } from "react";
 
 const MainVisual = styled.div`
@@ -82,9 +81,6 @@ const Content_1 = styled.div`
         overflow: hidden;
         border-radius: 3.75rem 0 3.75rem 0;
       }
-      a{
-
-      }
     }
     .tab_right{
 
@@ -108,7 +104,6 @@ const MenuButton = styled.button`
   background-color: ${props => props.$active ? "#41b79b" : "#f2f2f2"};
   color: ${props => props.$active ? "white" : "black"};
 `;
-
 
 
 export default function Home(){
@@ -149,7 +144,7 @@ export default function Home(){
                   </li>
                 ))}
               </ul>
-              <Link to='../pages/product.jsx'>More View</Link>
+              <MoreButton />
             </div>
 
             <div className="tab_right">
@@ -158,7 +153,7 @@ export default function Home(){
                   <img src="../assets/epee_1.jpg" alt=".." />
                 </div>
                 <div className="txt_box">
-                  <Link to='../pages/product.jsx'>More View</Link>
+                  <MoreButton />
                 </div>
               </div>
 

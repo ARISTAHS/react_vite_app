@@ -85,7 +85,6 @@ const Content_1 = styled.div`
     }
     .tab_right{
       flex: 1;  // 남은 공간 모두 차지
-      align-items: center;
     }
   }
 

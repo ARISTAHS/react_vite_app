@@ -4,14 +4,21 @@ import MoreButton from "./Link";
 const ProductContainer = styled.div`
   display: flex;
   flex-wrap: wrap;
-  gap: 20px;
-  height: 100%;
-  align-items: center;
+  gap: 40px;
 
   .inner {
     flex: 1;
     max-width: 405px;
-    
+    height: 610px;
+    border-radius: 6.25rem 0 6.25rem 0;
+    box-shadow: 8px 8px 20px 0px rgba(0, 0, 0, 0.15);
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.2s ease-in-out; 
+
     .img_box {
       height: 300px;
       img {
@@ -35,8 +42,11 @@ const ProductContainer = styled.div`
         margin-bottom: 1rem;
       }
     }
+    &:hover{
+    border: 0.25rem solid #41b79b;
+    }
   }
-
+ 
 `;
 
 const productData = [

@@ -1,5 +1,6 @@
 import styled from "styled-components";
 import { Link } from "react-router-dom";
+import PropTypes from 'prop-types';
 
 const MoreView = styled(Link)`
   display: flex;
@@ -24,3 +25,8 @@ export default function MoreButton({to = '/pages/product'}){
     <MoreView to={to}>More View</MoreView>
   );
 }
+
+// PropTypes 정의 추가
+MoreButton.propTypes = {
+  to: PropTypes.string
+};

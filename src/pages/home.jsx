@@ -106,11 +106,170 @@ const MenuButton = styled.button`
   color: ${props => props.$active ? "white" : "black"};
 `;
 
+const Content_2 = styled.div`
+
+  .brand_content{
+    max-width: 1660px;  // 최대 너비 설정
+  margin: 0 auto;     // 중앙 정렬
+  padding: 0 20px;    // 좌우 여백
+
+    .content_title{}
+    .img_box {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+    
+    .img_rayout {
+      aspect-ratio: 1/1;  // 정사각형 비율로 통일
+      
+      // 첫 번째 줄 (2개의 큰 이미지)
+      &:nth-child(1),
+      &:nth-child(2) {
+        grid-column: span 2;
+        aspect-ratio: 16/9;  // 가로로 긴 직사각형
+      }
+      
+      // 중간 줄 (4개의 작은 이미지)
+      &:nth-child(3),
+      &:nth-child(4),
+      &:nth-child(5),
+      &:nth-child(6) {
+        grid-column: span 1;
+      }
+      
+      // 마지막 줄 (2개의 중간 크기 이미지)
+      &:nth-child(7),
+      &:nth-child(8) {
+        grid-column: span 2;
+        aspect-ratio: 3/2;  // 가로로 약간 긴 직사각형
+      }
+
+      img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        object-position: center;
+      }
+    }
+  }
+
+  // 반응형 처리
+  @media (max-width: 1200px) {
+    .img_box {
+      grid-template-columns: repeat(3, 1fr);
+      
+      .img_rayout {
+        &:nth-child(1),
+        &:nth-child(2) {
+          grid-column: span 3;  // 전체 너비 사용
+        }
+        
+        &:nth-child(7),
+        &:nth-child(8) {
+          grid-column: span 3;  // 전체 너비 사용
+        }
+      }
+    }
+  }
+
+  @media (max-width: 768px) {
+    .img_box {
+      grid-template-columns: repeat(2, 1fr);
+      
+      .img_rayout {
+        &:nth-child(1),
+        &:nth-child(2) {
+          grid-column: span 2;
+        }
+        
+        &:nth-child(3),
+        &:nth-child(4),
+        &:nth-child(5),
+        &:nth-child(6) {
+          grid-column: span 1;
+        }
+        
+        &:nth-child(7),
+        &:nth-child(8) {
+          grid-column: span 2;
+        }
+      }
+    }
+  }
+
+  @media (max-width: 480px) {
+    .img_box {
+      grid-template-columns: 1fr;
+      
+      .img_rayout {
+        &:nth-child(n) {  // 모든 아이템
+          grid-column: span 1;
+          aspect-ratio: 3/2;
+        }
+      }
+    }
+  }
+  }
+`;
+
 
 export default function Home(){
 
   const menu = ['Foil', 'Epee', 'Sabre'];
   const [activeButton, setActiveButton] = useState(menu[0]);
+  const brandImg = [
+    {
+      id:1,
+      image : "/assets/etc1.jpg",
+      desc : "만드는 모습 1"
+    },
+    {
+      id:2,
+      image : "/assets/etc2.jpg",
+      desc : "만드는 모습 2"
+    },
+    {
+      id:3,
+      image : "/assets/etc3.jpg",
+      desc : "만드는 모습 3"
+    },
+    {
+      id:4,
+      image : "/assets/etc4.jpg",
+      desc : "만드는 모습 4"
+    },
+    {
+      id:5,
+      image : "/assets/etc5.jpg",
+      desc : "만드는 모습 5"
+    },
+    {
+      id:6,
+      image : "/assets/etc6.jpg",
+      desc : "만드는 모습 6"
+    },
+    {
+      id:7,
+      image : "/assets/etc7.jpg",
+      desc : "만드는 모습 7"
+    },
+    {
+      id:8,
+      image : "/assets/etc8.jpg",
+      desc : "만드는 모습 8"
+    },
+    {
+      id:9,
+      image : "/assets/etc9.jpg",
+      desc : "만드는 모습 9"
+    },
+    {
+      id:10,
+      image : "/assets/etc10.jpg",
+      desc : "만드는 모습 10"
+    },
+
+  ]
 
 
   return(
@@ -150,13 +309,27 @@ export default function Home(){
 
             <div className="tab_right">
                 <ProductList />
-             
-
             </div>
           </div>
 
         </div>
       </Content_1>
+
+      <Content_2 className="container">
+        <div className="brand_content">
+          <div className="content_title">
+            <h3>Brand</h3>
+            <p>최고의 펜싱 장비, <br /> 이렇게 제작됩니다.</p>
+          </div>
+          <div className="img_box">
+            {brandImg.map((brand) => (
+              <div className="img_rayout" key={brand.id}>
+                <img src={brand.image} alt={brand.desc} />
+              </div>
+            ))}
+          </div>
+        </div>
+      </Content_2>
     </>
   );
 }

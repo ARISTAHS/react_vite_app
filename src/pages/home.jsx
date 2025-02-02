@@ -32,16 +32,14 @@ const MainVisual = styled.div`
       margin-top: 1.2rem;
     }
   }
-
-  .product_content{
-    height: 500px;
-    border: 1px solid red;
-  }
 `;
 
 const Content_1 = styled.div`
   
   .product_content{
+    padding: 0 20px;
+    max-width: 1660px;
+    margin: 0 auto;
 
     .sec_top{
       display: flex;
@@ -85,6 +83,8 @@ const Content_1 = styled.div`
     }
     .tab_right{
       flex: 1;  // 남은 공간 모두 차지
+      width: 1300px;
+      overflow: hidden;
     }
   }
 

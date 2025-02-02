@@ -3,12 +3,14 @@ import MoreButton from "./Link";
 
 const ProductContainer = styled.div`
   display: flex;
-  flex-wrap: wrap;
-  gap: 40px;
+  /* flex-wrap: wrap; */
+  gap: 35px;
+  width: 1660px;
+  padding: 0 0 30px;
 
   .inner {
     flex: 1;
-    max-width: 405px;
+    min-width: 400px;
     height: 610px;
     border-radius: 6.25rem 0 6.25rem 0;
     box-shadow: 8px 8px 20px 0px rgba(0, 0, 0, 0.15);
@@ -62,6 +64,20 @@ const productData = [
     image : "/assets/foil_2.jpg",
     title : "플러레 마라징 블레이드",
     desc : "플러레 마라징 블레이드",
+    link : '/pages/product.jsx'
+  },
+  {
+    id: 3,
+    image : "/assets/foil_b.jpg",
+    title : "플러레 마라징 블랙 블레이드",
+    desc : "플러레 마라징 블랙 블레이드",
+    link : '/pages/product.jsx'
+  },
+  {
+    id: 4,
+    image : "/assets/foil_b2.jpg",
+    title : "플러레 마라징 블랙 블레이드",
+    desc : "플러레 마라징 블랙 블레이드",
     link : '/pages/product.jsx'
   },
   

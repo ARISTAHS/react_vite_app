@@ -20,3 +20,7 @@
   ### Version Control
 ![Git](https://img.shields.io/badge/Git-F05032?style=flat-square&logo=git&logoColor=white)
 ![GitHub](https://img.shields.io/badge/GitHub-181717?style=flat-square&logo=github&logoColor=white)
+
+
+## 프로젝트 구조
+📁 src/ ├── 📁 components/ # UI 및 공통 컴포넌트 모음 │ ├── 📁 common/ # 헤더, 푸터, 네비게이션 등 공통 레이아웃 │ │ ├── footer.jsx │ │ ├── gnb.jsx │ │ ├── header.jsx │ │ │ ├── 📁 ui/ # UI 관련 컴포넌트 (페이지네이션, 팝업 등) │ │ ├── link.jsx │ │ ├── mainSlide.jsx │ │ ├── pagination.jsx │ │ ├── popup.jsx │ │ ├── productData.jsx │ │ │ ├── layout.jsx # 기본 레이아웃 컴포넌트 │ ├── 📁 pages/ # 개별 페이지 컴포넌트 │ ├── about.jsx │ ├── contact.jsx │ ├── home.jsx │ ├── intro.jsx │ ├── login.jsx │ ├── product.jsx │ ├── App.jsx # 전체 애플리케이션의 루트 컴포넌트 ├── main.jsx # React 앱의 진입점 │ ├── 📁 public/ # 정적 파일 (이미지, 폰트 등) │ ├── 📁 assets/ │ │ ├── vite.svg │ ├── index.html # HTML 진입점 ├── index.css # 전역 스타일 ├── package.json # 프로젝트 설정 및 종속성 관리 ├── README.md # 프로젝트 설명 파일 └── vite.config.js # Vite 설정 파일

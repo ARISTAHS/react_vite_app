@@ -22,7 +22,7 @@
 ![GitHub](https://img.shields.io/badge/GitHub-181717?style=flat-square&logo=github&logoColor=white)
 
 
-## 📌프로젝트 구조 ※추후 변동 가능
+## 📌포폴 파일 구조 ※추후 변동 가능
 
 📂 src
  ┣ 📂 components       # UI 및 공통 컴포넌트 모음

@@ -2,6 +2,7 @@ import styled from "styled-components";
 import Slider from '../components/ui/mainSlide';
 import MoreButton from "../components/ui/Link";
 import ProductList from "../components/ui/productData";
+import ModalImages from "../components/ui/popup";
 import { useState } from "react";
 
 const MainVisual = styled.div`
@@ -110,78 +111,26 @@ const Content_2 = styled.div`
 
   .brand_content{
     max-width: 1660px;  // 최대 너비 설정
-  margin: 0 auto;     // 중앙 정렬
-  padding: 0 20px;    // 좌우 여백
+    margin: 0 auto;     // 중앙 정렬
+    padding: 0 20px;    // 좌우 여백
 
     .content_title{}
     .img_box {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 20px;
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 20px;
     
-    .img_rayout {
-      aspect-ratio: 1/1;  // 정사각형 비율로 통일
-      
-      // 첫 번째 줄 (2개의 큰 이미지)
-      &:nth-child(1),
-      &:nth-child(2) {
-        grid-column: span 2;
-        aspect-ratio: 16/9;  // 가로로 긴 직사각형
-      }
-      
-      // 중간 줄 (4개의 작은 이미지)
-      &:nth-child(3),
-      &:nth-child(4),
-      &:nth-child(5),
-      &:nth-child(6) {
-        grid-column: span 1;
-      }
-      
-      // 마지막 줄 (2개의 중간 크기 이미지)
-      &:nth-child(7),
-      &:nth-child(8) {
-        grid-column: span 2;
-        aspect-ratio: 3/2;  // 가로로 약간 긴 직사각형
-      }
-
-      img {
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
-        object-position: center;
-      }
-    }
-  }
-
-  // 반응형 처리
-  @media (max-width: 1200px) {
-    .img_box {
-      grid-template-columns: repeat(3, 1fr);
-      
       .img_rayout {
-        &:nth-child(1),
-        &:nth-child(2) {
-          grid-column: span 3;  // 전체 너비 사용
-        }
+        aspect-ratio: 1/1;  // 정사각형 비율로 통일
         
-        &:nth-child(7),
-        &:nth-child(8) {
-          grid-column: span 3;  // 전체 너비 사용
-        }
-      }
-    }
-  }
-
-  @media (max-width: 768px) {
-    .img_box {
-      grid-template-columns: repeat(2, 1fr);
-      
-      .img_rayout {
+        // 첫 번째 줄 (2개의 큰 이미지)
         &:nth-child(1),
         &:nth-child(2) {
           grid-column: span 2;
+          aspect-ratio: 16/9;  // 가로로 긴 직사각형
         }
         
+        // 중간 줄 (4개의 작은 이미지)
         &:nth-child(3),
         &:nth-child(4),
         &:nth-child(5),
@@ -189,26 +138,99 @@ const Content_2 = styled.div`
           grid-column: span 1;
         }
         
+        // 마지막 줄 (2개의 중간 크기 이미지)
         &:nth-child(7),
         &:nth-child(8) {
           grid-column: span 2;
+          aspect-ratio: 3/2;  // 가로로 약간 긴 직사각형
         }
-      }
-    }
-  }
 
-  @media (max-width: 480px) {
-    .img_box {
-      grid-template-columns: 1fr;
-      
-      .img_rayout {
-        &:nth-child(n) {  // 모든 아이템
-          grid-column: span 1;
-          aspect-ratio: 3/2;
+        &:nth-child(9),
+        &:nth-child(10){
+          grid-column: span 2;
+          aspect-ratio: 13/6;
+        }
+
+        .img_button{
+            width: 100%;
+            height: 100%;
+            padding: 0;
+            border: none;
+            background: none;
+            cursor: pointer;
+            overflow: hidden;  // 이미지 호버 효과를 위해
+
+            img {
+              width: 100%;
+              height: 100%;
+              object-fit: cover;
+              object-position: center;
+              transition: transform 0.3s ease;
+              
+              &:hover {
+                transform: scale(1.1);
+              }
+            }
+          }
+      }
+    }
+
+    // 반응형 처리
+    @media (max-width: 1200px) {
+      .img_box {
+        grid-template-columns: repeat(3, 1fr);
+        
+        .img_rayout {
+          &:nth-child(1),
+          &:nth-child(2) {
+            grid-column: span 3;  // 전체 너비 사용
+          }
+          
+          &:nth-child(7),
+          &:nth-child(8) {
+            grid-column: span 3;  // 전체 너비 사용
+          }
         }
       }
     }
-  }
+
+    @media (max-width: 768px) {
+      .img_box {
+        grid-template-columns: repeat(2, 1fr);
+        
+        .img_rayout {
+          &:nth-child(1),
+          &:nth-child(2) {
+            grid-column: span 2;
+          }
+          
+          &:nth-child(3),
+          &:nth-child(4),
+          &:nth-child(5),
+          &:nth-child(6) {
+            grid-column: span 1;
+          }
+          
+          &:nth-child(7),
+          &:nth-child(8) {
+            grid-column: span 2;
+          }
+        }
+      }
+    }
+
+    @media (max-width: 480px) {
+      .img_box {
+        grid-template-columns: 1fr;
+        
+        .img_rayout {
+          &:nth-child(n) {  // 모든 아이템
+            grid-column: span 1;
+            aspect-ratio: 3/2;
+          }
+        }
+      }
+    }
   }
 `;
 
@@ -271,6 +293,18 @@ export default function Home(){
 
   ]
 
+  const [selectImg , setSelectImg] = useState(null);
+  const [modalOpen , setModalOpen] = useState(false);
+
+  const openModal = (image) => {
+    setSelectImg(image);
+    setModalOpen(true);
+  };
+  const closeModal = () => {
+    setModalOpen(false);
+    setTimeout(()=>setSelectImg(null), 300);
+  }
+
 
   return(
     <>
@@ -324,12 +358,25 @@ export default function Home(){
           <div className="img_box">
             {brandImg.map((brand) => (
               <div className="img_rayout" key={brand.id}>
-                <img src={brand.image} alt={brand.desc} />
+                <button type="button" onClick={()=> openModal(brand.image)}
+                  className="img_button" aria-label={`${brand.desc} 이미지 크게 보기`}>
+                  <img src={brand.image} alt={brand.desc} />
+                </button>
               </div>
             ))}
           </div>
         </div>
+
+        <ModalImages isOpen={modalOpen} image={selectImg} onClose={closeModal} />
       </Content_2>
+
+      {/* <Content_3 className="container">
+        <div className="kakaoMap">
+          <div>
+
+          </div>
+        </div>
+      </Content_3> */}
     </>
   );
 }

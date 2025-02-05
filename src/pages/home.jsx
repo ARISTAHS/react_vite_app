@@ -114,7 +114,23 @@ const Content_2 = styled.div`
     margin: 0 auto;     // 중앙 정렬
     padding: 0 20px;    // 좌우 여백
 
-    .content_title{}
+    .content_title{
+      display: flex;
+      align-items: baseline;
+      gap: 1.875rem;
+      padding-bottom: 3.5rem;
+
+      h3{
+        font-size: 3.75rem;
+        font-weight: 700;
+        color: #000;
+      }
+      p{
+        font-size: 1.125rem;
+        line-height: 1.5;
+        color: #666;
+      }
+    }
     .img_box {
       display: grid;
       grid-template-columns: repeat(4, 1fr);
@@ -353,7 +369,7 @@ export default function Home(){
         <div className="brand_content">
           <div className="content_title">
             <h3>Brand</h3>
-            <p>최고의 펜싱 장비, <br /> 이렇게 제작됩니다.</p>
+            <p>최고의 펜싱 장비, 이렇게 제작됩니다.</p>
           </div>
           <div className="img_box">
             {brandImg.map((brand) => (

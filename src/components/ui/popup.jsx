@@ -34,7 +34,7 @@ export default function ModalImages({isOpen, image, onClose}){
         src={image}
         $isOpen={isOpen}
         alt="확대 된 이미지"
-        onClick={ e=> e.stopPropagation()} 
+        onClick={onClose} // onClick={(e) => e.stopPropagation()} 에서 수정. 이미지를 클릭해도 모달창 닫힘.
       />
     </ModalBox>
   );

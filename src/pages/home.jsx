@@ -250,6 +250,25 @@ const Content_2 = styled.div`
   }
 `;
 
+const Content_3 = styled.div`
+  .map_wrap{
+
+    .map_text{
+      h3{}
+      p{
+        &:nth-child(1){}
+        &:nth-child(2){}
+      }
+    }
+
+    #map{
+      width: 1000px;
+      height: 600px;
+    }
+  }
+`;
+
+
 
 export default function Home(){
 
@@ -386,13 +405,19 @@ export default function Home(){
         <ModalImages isOpen={modalOpen} image={selectImg} onClose={closeModal} />
       </Content_2>
 
-      {/* <Content_3 className="container">
-        <div className="kakaoMap">
-          <div>
+      <Content_3 className="container">
+        <div className="map_wrap">
+          <div className="map_text">
+            <h3></h3>
+            <p></p>
+            <p></p>
+          </div>
+
+          <div id="map">
 
           </div>
         </div>
-      </Content_3> */}
+      </Content_3>
     </>
   );
 }

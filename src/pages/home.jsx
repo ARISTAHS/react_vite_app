@@ -3,6 +3,7 @@ import Slider from '../components/ui/mainSlide';
 import MoreButton from "../components/ui/Link";
 import ProductList from "../components/ui/productData";
 import ModalImages from "../components/ui/popup";
+import Map from "../components/ui/map";
 import { useState } from "react";
 
 const MainVisual = styled.div`
@@ -252,7 +253,7 @@ const Content_2 = styled.div`
 
 const Content_3 = styled.div`
   .map_wrap{
-
+    
     .map_text{
       h3{}
       p{
@@ -414,7 +415,7 @@ export default function Home(){
           </div>
 
           <div id="map">
-
+            <Map/>
           </div>
         </div>
       </Content_3>

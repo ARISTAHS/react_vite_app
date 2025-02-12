@@ -49,7 +49,8 @@
  ┃ ┣ 📜 product.jsx
  ┃
  ┣ 📂 config           # 설정 관련 파일 모음 (새로 추가됨)
- ┃ ┣ 📜 config.js      # API 키 및 환경변수 관리
- ┣ 📂 public           # 정적 파일 (이미지, 폰트 등)
-   ┗ 📂 assets         # 이미지 절대 경로 이용
+ ┃ ┗ 📜 config.js      # API 키 및 환경변수 관리
+
+ 📂 public           # 정적 파일 (이미지, 폰트 등)
+ ┗ 📂 assets         # 이미지 절대 경로 이용
 ```

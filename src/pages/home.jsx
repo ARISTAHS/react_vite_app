@@ -409,7 +409,7 @@ export default function Home(){
       <Content_3 className="container">
         <div className="map_wrap">
           <div className="map_text">
-            <h3></h3>
+            <h3>We are here.</h3>
             <p></p>
             <p></p>
           </div>

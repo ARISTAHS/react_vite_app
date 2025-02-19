@@ -43,9 +43,9 @@ export default function MapApi(){
 
     let map = new window.kakao.maps.Map(container, options);
     
-    let markerPoint = new kakao.maps.LatLng(37.524731, 127.133032);
+    let markerPoint = new window.kakao.maps.LatLng(37.524731, 127.133032);
 
-    let marker = new kakao.maps.Marker({
+    let marker = new window.kakao.maps.Marker({
       position : markerPoint
     });
 

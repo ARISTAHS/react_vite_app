@@ -264,12 +264,12 @@ const Content_3 = styled.div`
       width: 100%;
 
       .left{
-        width: 45%;
-        height: 510px;
+        width: 55%;
+        height: 580px;
       }
       .right{
         margin-left: 5rem;
-        width: 55%;
+        width: 45%;
         background-color: #1E2725;
 
         .right_title{
@@ -287,10 +287,17 @@ const Content_3 = styled.div`
           }
         }
         .list{
-          
+          padding: 1rem;
+
           li{
             background-color: rgba(255,255,255,0.07);
             padding: 2.2rem;
+
+            &:nth-of-type(2),
+            &:nth-of-type(3){
+              margin-top: 20px;
+            }
+
             p{
               &:nth-child(1){
                 font-size: max(1.3rem, 12px);

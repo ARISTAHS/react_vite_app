@@ -83,6 +83,35 @@ const CopyRight = styled.div`
 
 
 export default function Footer(){
+
+  const addressTex = [
+    {
+      id:1,
+      tit : '주소',
+      txt : '서울특별시 강동구 양재대로 85길 30 이성빌딩 303호',
+    },
+    {
+      id:2,
+      tit : '우편번호',
+      txt : '05405',
+    },
+    {
+      id:3,
+      tit : '전화',
+      txt : '02-474-0697~8',
+    },
+    {
+      id:4,
+      tit : 'E-mail',
+      txt : 'primosports@hotmail.com',
+    },
+    {
+      id:5,
+      tit : '팩스',
+      txt : '02-483-0272',
+    }
+  ]
+
   return(
     <FooterWrapper>
       <FooterWrap>
@@ -101,7 +130,13 @@ export default function Footer(){
             </li>
           </ul>
           <address>
-            <p>
+            {addressTex.map((address) => (
+              <p key={address.id}>
+                <strong>{address.tit}</strong>
+                <span>{address.txt}</span>
+              </p>
+            ))}
+            {/* <p>
               <strong>주소</strong>
               <span>서울특별시 강동구 양재대로 85길 30 이성빌딩 303호</span>
             </p>
@@ -120,7 +155,7 @@ export default function Footer(){
             <p>
               <strong>팩스</strong>
               <span>02-483-0272</span>
-            </p>
+            </p> */}
           </address>
 
           <CopyRight>

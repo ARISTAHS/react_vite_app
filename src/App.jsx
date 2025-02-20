@@ -77,6 +77,12 @@ const GlobalStyle = createGlobalStyle`
     position: relative;
   }
 
+  h2{
+    font-size: 3.75rem;
+    font-weight: 700;
+    color: #000;
+  }
+
 `;
 
 function App() {

@@ -48,11 +48,11 @@ const Content_1 = styled.div`
       align-items: center;
       gap: 1.875rem;
 
-      h2{
+      /* h2{
         font-weight: 700;
         font-size: 3.75rem;
         color: #000;
-      }
+      } */
       p{
         font-size: 1.125rem;
         line-height: 1.25;
@@ -121,15 +121,9 @@ const Content_2 = styled.div`
       gap: 1.875rem;
       padding-bottom: 3.5rem;
 
-      h3{
-        font-size: 3.75rem;
-        font-weight: 700;
-        color: #000;
-      }
       p{
         font-size: 1.125rem;
         line-height: 1.5;
-        color: #666;
       }
     }
     .img_box {
@@ -253,18 +247,68 @@ const Content_2 = styled.div`
 
 const Content_3 = styled.div`
   .map_wrap{
-    
-    .map_text{
-      h3{}
-      p{
-        &:nth-child(1){}
-        &:nth-child(2){}
-      }
-    }
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 40px;
 
-    #map{
-      width: 1000px;
-      height: 600px;
+    .top_box{
+      display: flex;
+      align-items: baseline;
+      gap: 1.875rem;
+    }
+    .bottom_box{
+      display: flex;
+      align-items: center;
+      justify-items: center;
+      width: 100%;
+
+      .left{
+        width: 45%;
+        height: 510px;
+      }
+      .right{
+        margin-left: 5rem;
+        width: 55%;
+        background-color: #1E2725;
+
+        .right_title{
+          margin: 20px 0 2rem 30px;
+          p{
+            &.tit{
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: #fff;
+            }
+            &.txt{
+            margin-top: 1rem;
+            color: rgba(255,255,255,0.5);
+            }
+          }
+        }
+        .list{
+          
+          li{
+            background-color: rgba(255,255,255,0.07);
+            padding: 2.2rem;
+            p{
+              &:nth-child(1){
+                font-size: max(1.3rem, 12px);
+                font-weight: 700;
+                color: #f9f9f9;
+                margin-bottom: 20px;
+              }
+              &:nth-child(2){
+                font-size: max(1.1rem, 11px);
+                color: rgba(255, 255, 255, 0.3);
+                text-overflow: ellipsis;
+                white-space: nowrap;
+                overflow: hidden;
+              }
+            }
+          }
+        }
+      }
     }
   }
 `;
@@ -327,7 +371,7 @@ export default function Home(){
       desc : "만드는 모습 10"
     },
 
-  ]
+  ];
 
   const [selectImg , setSelectImg] = useState(null);
   const [modalOpen , setModalOpen] = useState(false);
@@ -339,8 +383,25 @@ export default function Home(){
   const closeModal = () => {
     setModalOpen(false);
     setTimeout(()=>setSelectImg(null), 300);
-  }
+  };
 
+  const noticeList = [
+    {
+      id:1,
+      title: '2025년 02월 20일 가격에 대한 공지',
+      desc: '최근 원가 상승으로 인하여 부득이 2025년 02월 20일부터 품목 가격을 인상하게 되었습니다.고객 여러분의 넓은 양해를 구하면서 지속적인 애용과 격려를 부탁드립니다.',
+    },
+    {
+      id:2,
+      title: 'allstar, uhlmann사의 FIE 마스크 밴드교체',
+      desc: '알스타 FIE 마스크 밴드 정품 수리키트 부품을 고객 여러분들의 편의를 위하여 재입고하여 현재 교체가 가능함을 알려드립니다.',
+    },
+    {
+      id:3,
+      title: '2025년 마라징 블레이드 예약 판매 공지',
+      desc: '알스타 본사의 마라징 블레이드 수급 관련하여 공지드립니다.',
+    }
+  ];
 
   return(
     <>
@@ -388,7 +449,7 @@ export default function Home(){
       <Content_2 className="container">
         <div className="brand_content">
           <div className="content_title">
-            <h3>Brand</h3>
+            <h2>Brand</h2>
             <p>최고의 펜싱 장비, 이렇게 제작됩니다.</p>
           </div>
           <div className="img_box">
@@ -408,14 +469,31 @@ export default function Home(){
 
       <Content_3 className="container">
         <div className="map_wrap">
-          <div className="map_text">
-            <h3>We are here.</h3>
-            <p></p>
-            <p></p>
+
+          <div className="top_box">
+            <h2>Media</h2>
+            <p>위치와 공지사항을 확인해주세요.</p>
           </div>
 
-          <div id="map">
-            <Map/>
+          <div className="bottom_box">
+            <div id="map" className="left">
+              <Map/>
+            </div>
+            
+            <div className="right">
+              <div className="right_title">
+                <p className="tit">공지사항</p>
+                <p className="txt">프리모상사의 다양한 소식을 전해드립니다.</p>
+              </div>
+              <ul className="list">
+                {noticeList.map((notice)=>(
+                  <li key={notice.id}>
+                    <p>{notice.title}</p>
+                    <p>{notice.desc}</p>
+                  </li>
+                ))}
+              </ul>
+            </div>
           </div>
         </div>
       </Content_3>

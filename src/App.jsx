@@ -6,6 +6,7 @@ import Home from "./pages/home";
 import About from "./pages/about";
 import Product from "./pages/product";
 import Contact from "./pages/contact";
+import Intro from "./pages/intro";
 
 
 //라우터 설정
@@ -20,7 +21,10 @@ const router = createBrowserRouter([
       { path: "contact" , element: <Contact />},
     ],
   },
- 
+  {
+    path:"intro",
+    element:<Intro/>,
+  }
 ]);
 
 //전역 css + 리셋

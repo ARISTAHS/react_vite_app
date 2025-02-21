@@ -12,7 +12,7 @@ import Intro from "./pages/intro";
 //라우터 설정
 const router = createBrowserRouter([
   {
-    path: "/",
+    path: "/main",
     element: <Layout/>,
     children: [
       { path: "" , element: <Home />},
@@ -22,7 +22,7 @@ const router = createBrowserRouter([
     ],
   },
   {
-    path:"intro",
+    path:"/",
     element:<Intro/>,
   }
 ]);

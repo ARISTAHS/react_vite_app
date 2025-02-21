@@ -4,7 +4,16 @@ import styled from "styled-components";
 import introImg from "/assets/intro.jpg";
 
 const IntroWrap = styled.div`
+  position: fixed;
+  width: 100%;
   height: 100vh;
+  /* background-color: #000; */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: ${({ fadeOut }) => (fadeOut ? 0 : 1)};
+  transition: opacity 1s ease-in-out;
+  pointer-events: ${({ fadeOut }) => (fadeOut ? "none" : "auto")}; 
 
   .intro_inner{
     width: 100%;
@@ -164,18 +173,25 @@ const IntroText = {
 }
 
 export default function Intro(){
-  const [isVisible, setIsVisible] = useState(false);
+  const [fadeOut, setFadOut] = useState(false);
+  const navigate = useNavigate();
 
-  useEffect(() => {
-    setTimeout(() => {
-      setIsVisible(true);
-    }, 1000); // 0.5초 후에 타이틀이 나타나도록 설정
-  }, []);
+  useEffect(()=>{
+    //2초후 페이드 아웃
+    setTimeout(()=>{
+      setFadOut(true);
+    },4000);
+
+    //3초후 main화면으로 이동
+    setTimeout(()=>{
+      navigate("/main");
+    },5000);
+  },[navigate]);
 
   return(
-    <IntroWrap>
+    <IntroWrap fadeOut={fadeOut}>
       <div className="intro_inner">
-        <h2 className="intro_tit" style={{ opacity: isVisible ? 1 : 0 }}>{IntroText.title}</h2>
+        <h2 className="intro_tit">{IntroText.title}</h2>
         
         <div className="intro_lines">
           <span className="line"></span>

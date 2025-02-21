@@ -7,7 +7,6 @@ const IntroWrap = styled.div`
   position: fixed;
   width: 100%;
   height: 100vh;
-  /* background-color: #000; */
   display: flex;
   align-items: center;
   justify-content: center;
@@ -129,39 +128,6 @@ const IntroWrap = styled.div`
             height: 25px;
         }
       }
-      /* &.bottom{
-        .line {
-          margin-top: 0.5vw;
-          margin-bottom: 0;
-          display: none;
-
-          @media (max-width: 800px){ 
-              display: block;
-          }
-
-          &:nth-child(1){
-              height: 25px;
-          }
-          &:nth-child(2){
-              height: 17px;
-          }
-          &:nth-child(3){
-              height: 13px;
-          }
-          &:nth-child(4){
-              height: 9px;
-          }
-          &:nth-child(5){
-              height: 5px;
-          }
-          &:nth-child(6){
-              height: 2px;
-          }
-          &:nth-child(7){
-              height: 1px;
-          }
-        }
-      } */
     }
   }
 `;
@@ -180,12 +146,12 @@ export default function Intro(){
     //2초후 페이드 아웃
     setTimeout(()=>{
       setFadOut(true);
-    },4000);
+    }, 4000);
 
     //3초후 main화면으로 이동
     setTimeout(()=>{
       navigate("/main");
-    },5000);
+    }, 5000);
   },[navigate]);
 
   return(
@@ -213,16 +179,6 @@ export default function Intro(){
             <img src={introImg} alt="인트로사진" />
           </div>
         </div>
-
-        {/* <div className="intro_lines bottom">
-          <span className="line"></span>
-          <span className="line"></span>
-          <span className="line"></span>
-          <span className="line"></span>
-          <span className="line"></span>
-          <span className="line"></span>
-          <span className="line"></span>
-        </div> */}
       </div>
     </IntroWrap>
   );

@@ -1,0 +1,17 @@
+# Node.js 관련 파일
+node_modules/
+package-lock.json
+
+# 환경 변수 파일 (보안)
+.env
+
+# 로그 파일
+logs/
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# OS별 임시 파일
+.DS_Store
+Thumbs.db

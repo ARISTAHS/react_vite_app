@@ -1,11 +1,14 @@
 import { useEffect } from "react";
-import KaKaMapAPI from '../../config/config';
+import config from '../../config/config';
 
 export default function MapApi(){
 
+  const MapAPI = config.API_KEY;
+  // console.log("MapAPI:", MapAPI);
+
   useEffect(()=> {
   
-    if (!KaKaMapAPI) {
+    if (!MapAPI) {
       console.error("카카오 API 키가 설정되지 않았습니다.");
       return;
     }
@@ -15,7 +18,7 @@ export default function MapApi(){
       //script를 html에 동적으로 생성 추가 
       const script = document.createElement("script");
       script.type = "text/javascript";
-      script.src = `//dapi.kakao.com/v2/maps/sdk.js?appkey=${KaKaMapAPI}&autoload=false`;
+      script.src = `//dapi.kakao.com/v2/maps/sdk.js?appkey=${MapAPI}&autoload=false`;
       //head 마지막에 script 추가
       document.head.appendChild(script);
 

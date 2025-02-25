@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
 import styled from "styled-components";
+import LoginPage from "../../pages/login";
 
 const Nav = styled.nav`
   background-color: #333;
@@ -36,19 +37,14 @@ export default function Gnb() {
   return (
     <Nav>
       <Ul>
-        {/* <li><Link to="/">Home</Link></li>
-        <li><Link to="/about">About</Link></li>
-        <li><Link to="/products">Products</Link></li>
-        <li><Link to="/contact">Contact</Link></li> */}
-
         {/* 반복되는 li 태그를 map 함수로 수정 */}
         {navLi.map((link)=>(
           <Li key={link.path}>
             <Link to={link.path}>{link.label}</Link>
           </Li>
         ))}
-
       </Ul>
+      
     </Nav>
   );
 }

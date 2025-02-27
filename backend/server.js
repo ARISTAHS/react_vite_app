@@ -7,24 +7,24 @@ const cors = require("cors"); // CORS 허용하여 프론트-백엔드 통신 �
 
 const app = express(); //Express 애플리케이션 생성-> 서버 역할
 
-const PORT = 5000; //서버가 실행될 때 포트 번호.
+const PORT = 5000; //서버가 실행될 때 포트 번호
 
 // CORS 설정(프론트와 통신)
-app.use(cors());
-app.use(express.json());
+app.use(cors()); //타 도메인에서 api 호출을 허용
+app.use(express.json()); //req.body에서 json 데이터 파싱하는 역할 -> 없으면 읽을 수 없음
 
 // favicon.ico 요청 무시
 app.get("/favicon.ico", (req, res) => res.status(204));
 
 // json 파일에서 데이터 읽어오기
 const readData = () => {
-  const rawDate = fs.readFileSync("backend/db.json", "utf-8");
-  return JSON.parse(rawDate);
+  const rawDate = fs.readFileSync("backend/db.json", "utf-8"); //fs.readFileSync()으로 Json파일 읽어옴
+  return JSON.parse(rawDate); //JSON.parse()으로 Json 객체로 변환 후 반환
 };
 
 // json 데이터 저장 함수 
 const writeDate = (data) => {
-  fs.writeFileSync("backend/db.json", JSON.stringify(data, null, 2), "utf-8");
+  fs.writeFileSync("backend/db.json", JSON.stringify(data, null, 2), "utf-8"); //fs.writeFileSync()으로 Json 파일 저장(업데이트)
 };
 
 // 기본 루트 요청 추가
@@ -39,7 +39,7 @@ app.get("/api/users", (req, res) => {
 });
 
 // 사용자 추가
-app.post("/api.users", (req,res) => {
+app.post("/api/users", (req,res) => {
   const {email, password, name} = req.body;
   const data = readData(); 
 
@@ -65,7 +65,7 @@ app.post("/api/posts", (req, res) => {
     id: data.posts.length + 1,
     title,
     content,
-    createdAt : new Data(),
+    createdAt : new Date(), // 현재 날짜 저장
   };
 
   data.posts.push(newPost);

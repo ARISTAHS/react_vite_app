@@ -1,8 +1,13 @@
-const express = require("express");
-const fs = require("fs");
-const cors = require("cors");
-const app = express();
-const PORT = 5000;
+
+const express = require("express"); //express 프레임워크 가져오기 -> 서버 구축용
+
+const fs = require("fs"); //파일 시스템 모듈 가져온 후 Json 파일 읽기,저장 기능 생성
+
+const cors = require("cors"); // CORS 허용하여 프론트-백엔드 통신 가능하게 함
+
+const app = express(); //Express 애플리케이션 생성-> 서버 역할
+
+const PORT = 5000; //서버가 실행될 때 포트 번호.
 
 // CORS 설정(프론트와 통신)
 app.use(cors());

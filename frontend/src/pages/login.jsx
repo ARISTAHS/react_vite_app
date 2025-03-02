@@ -27,7 +27,6 @@ const LoginWrap = styled.div`
         margin-bottom: 20px;
       }
       form{
-
         .form_group{
           position: relative;
           padding: 0px 50px 0 20px;
@@ -189,7 +188,7 @@ export default function Login(){
        
           <ul className="menu_list">
             <li>
-              <Link to="/main">회원가입</Link>
+              <Link to="/signup">회원가입</Link>
             </li>
             <li>
               <Link to="/main">아이디찾기</Link>

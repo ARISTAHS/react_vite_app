@@ -1,6 +1,6 @@
 // 사용자 목록 가져오기 
 import { useEffect, useState } from "react";
-import {fetchUsers} from "../services/userService";
+import { fetchUser } from "../services/userService";
 
 export default function UserList(){
 
@@ -8,7 +8,7 @@ export default function UserList(){
   
   useEffect(()=>{
     async function loadUser() {
-      const data = await fetchUsers();
+      const data = await fetchUser();
       if(data){
         setUsers(data);
       }

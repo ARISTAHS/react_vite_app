@@ -8,7 +8,7 @@ export default function AuthStatus() {
   const navigate = useNavigate();
 
   useEffect(() => {
-    // 🔥 Firebase에서 로그인 상태 감지
+    // Firebase에서 로그인 상태 감지
     const unsubscribe = onAuthStateChanged(auth, (currentUser) => {
       setUser(currentUser);
     });

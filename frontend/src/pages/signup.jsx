@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 import styled from "styled-components";
 import { UpdateUser } from "../services/userService";
 
@@ -54,10 +55,11 @@ const SignWrap = styled.div`
 `;
 
 export default function SignUp(){
-
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [name, setName] = useState("");
+  
+  const navigate = useNavigate();
 
   const submitForm = async(e) => {
     e.preventDefault();
@@ -66,6 +68,9 @@ export default function SignUp(){
    
     if(result){
       alert("회원가입 성공");
+      navigate("/login");
+    }else{
+      alert("다시 시도하세요");
     }
   };
 

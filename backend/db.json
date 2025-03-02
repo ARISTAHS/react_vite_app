@@ -5,6 +5,12 @@
       "email": "test@naver.com",
       "password": "1111",
       "name": "테스터"
+    },
+    {
+      "id": 2,
+      "email": "test2@nate.com",
+      "password": "1212",
+      "name": "test2"
     }
   ],
   "posts": []

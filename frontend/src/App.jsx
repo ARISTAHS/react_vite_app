@@ -7,7 +7,8 @@ import About from "./pages/about";
 import Product from "./pages/product";
 import Contact from "./pages/contact";
 import Intro from "./pages/intro";
-import Login from './pages/login';
+import Login from "./pages/login";
+import UserList from "./pages/userList";
 
 
 //라우터 설정
@@ -30,6 +31,10 @@ const router = createBrowserRouter([
     path:"/login",
     element:<Login/>,
   },
+  {
+    path:"/userList",
+    element:<UserList />,
+  }
 ]);
 
 //전역 css + 리셋

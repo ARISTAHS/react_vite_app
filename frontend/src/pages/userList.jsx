@@ -20,9 +20,13 @@ export default function UserList(){
     <div>
       <h2>사용자 목록</h2>
       <ul>
-        {users.map((user) => (
-          <li key={user.id}>{user.name} ({user.email})</li>
-        ))}
+        {users.length > 0 ? (
+          users.map((user) => (
+            <li key={user.id}>{user.name} ({user.email})</li>
+          ))
+        ) : (
+          <p>가입된 사용자가 없습니다.</p>
+        )}
       </ul>
     </div>
   );

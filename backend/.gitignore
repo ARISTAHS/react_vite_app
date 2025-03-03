@@ -15,3 +15,14 @@ yarn-error.log*
 # OS별 임시 파일
 .DS_Store
 Thumbs.db
+
+# Firebase 설정 파일 (민감한 정보 포함 가능)
+.firebase/
+.firebaserc
+
+# Firestore 관련 파일 (배포 후 Git에 저장할 필요 없음)
+firestore.indexes.json
+firestore.rules
+
+# Firebase 설정 파일 (자동 생성됨, Git에 불필요)
+firebase.json

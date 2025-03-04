@@ -4,7 +4,7 @@ import { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import { signInWithEmailAndPassword } from "firebase/auth";
 import { auth } from "../config/firebase";
-import ErrorMsg from "../components/ui/ErrorMsg";
+import ErrorMsg from "../components/ui/ErrorMsg.jsx";
 
 
 const LoginWrap = styled.div`

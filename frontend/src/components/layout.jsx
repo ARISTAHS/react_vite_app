@@ -1,5 +1,5 @@
-import Header from './common/Header';
-import Footer from './common/Footer';
+import Header from './common/Header.jsx';
+import Footer from './common/Footer.jsx';
 import styled from "styled-components";
 import { Outlet } from 'react-router-dom';
 

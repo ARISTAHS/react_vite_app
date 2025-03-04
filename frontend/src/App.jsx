@@ -1,15 +1,15 @@
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import { createGlobalStyle } from 'styled-components';
 import reset from "styled-reset";
-import Layout from "./components/Layout";
-import Home from "./pages/Home";
-import About from "./pages/About";
-import Product from "./pages/Product";
-import Contact from "./pages/Contact";
-import Intro from "./pages/Intro";
-import Login from "./pages/Login";
-import SignUp from "./pages/Signup";
-import UserList from "./pages/UserList";
+import Layout from "./components/Layout.jsx";
+import Home from "./pages/Home.jsx";
+import About from "./pages/About.jsx";
+import Product from "./pages/Product.jsx";
+import Contact from "./pages/Contact.jsx";
+import Intro from "./pages/Intro.jsx";
+import Login from "./pages/Login.jsx";
+import SignUp from "./pages/Signup.jsx";
+import UserList from "./pages/UserList.jsx";
 
 
 //라우터 설정

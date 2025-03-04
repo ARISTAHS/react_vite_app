@@ -1,9 +1,9 @@
 import styled from "styled-components";
-import Slider from '../components/ui/MainSlide';
-import MoreButton from "../components/ui/Link";
-import ProductList from "../components/ui/ProductData";
-import ModalImages from "../components/ui/Popup";
-import Map from "../components/ui/Map";
+import Slider from '../components/ui/MainSlide.jsx';
+import MoreButton from "../components/ui/Link.jsx";
+import ProductList from "../components/ui/ProductData.jsx";
+import ModalImages from "../components/ui/Popup.jsx";
+import Map from "../components/ui/Map.jsx";
 import { useState } from "react";
 
 const MainVisual = styled.div`

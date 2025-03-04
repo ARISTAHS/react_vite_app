@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import Gnb from './gnb';
+import Gnb from './Gnb';
 import { Link } from "react-router-dom";
 import logoBlack from '/assets/main_logo_black.png';
 

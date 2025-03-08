@@ -1,6 +1,6 @@
 const { initializeApp } = require("firebase/app");
 const { getAuth } = require("firebase/auth");
-const config = require("../../frontend/"); // 환경변수 파일 불러오기
+const config = require("./config"); // 환경변수 파일 불러오기
 
 // Firebase 앱 초기화
 const firebaseConfig = {

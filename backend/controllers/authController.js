@@ -6,6 +6,14 @@ const { readData, writeData } = require("../util/dbUtil"); // 로컬 DB 처리 �
 const registerUser = async (req, res) => {
   const { email, password, name } = req.body;
 
+  // 비밀번호 검증 (6자 이상, 소문자 포함)
+  // firebase 최신 보안 정책에 따른 조건문 추가 -> 비밀번호 길이, 문자포함
+  if (password.length < 6 || !/[a-z]/.test(password)) {
+    return res.status(400).json({
+        message: "비밀번호는 최소 6자 이상이어야 하며, 소문자를 포함해야 합니다."
+    });
+  }
+
   try {
     // Firebase에서 회원가입 처리
     const userCredential = await createUserWithEmailAndPassword(auth, email, password);

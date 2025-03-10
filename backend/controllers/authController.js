@@ -1,6 +1,6 @@
 const { createUserWithEmailAndPassword, signInWithEmailAndPassword } = require("firebase/auth");
 const { auth } = require("../config/firebaseConfig"); // Firebase 인증 불러오기
-const { readData, writeData } = require("../utils/dbUtils"); // 로컬 DB 처리 함수 (아래 설명 참고)
+const { readData, writeData } = require("../util/dbUtil"); // 로컬 DB 처리 함수 (아래 설명 참고)
 
 // 회원가입 API
 const registerUser = async (req, res) => {

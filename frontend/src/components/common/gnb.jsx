@@ -1,5 +1,9 @@
+import { useState,useEffect } from "react";
+import { useNavigate } from "react-router-dom";
 import { Link } from "react-router-dom";
+import { onAuthStateChanged, signOut } from "firebase/auth";
 import styled from "styled-components";
+import { auth } from "../../config/firebase";
 
 const Nav = styled.nav`
   padding: 1rem;
@@ -59,6 +63,24 @@ export default function Gnb() {
     { label : "Contact" , path : "contact"},
   ];
 
+  const [user, setUser] = useState(null);
+  const navigate = useNavigate();
+
+  useEffect(() => {
+    // 현재 로그인한 사용자 감지
+    const unsubscribe = onAuthStateChanged(auth, (currentUser) => {
+      setUser(currentUser);
+    });
+
+    return () => unsubscribe(); // 구독 해제
+  }, []);
+
+  const handleLogout = async () => {
+    await signOut(auth);
+    setUser(null);
+    navigate("/main");
+  };
+
   return (
     <Nav>
       <div className="sub_box">
@@ -74,12 +96,28 @@ export default function Gnb() {
       
       <div className="etc_box">
         <ul className="etc_list">
-          <li>
-            <Link to="/login">로그인</Link>
-          </li>
-          <li>
-            <Link to="/signup">회원가입</Link>
-          </li>
+        {user ? (
+          <>
+            <li>
+              <Link to="#" onClick={(e)=>{
+                e.preventDefault();
+                handleLogout(); // 로그아웃 실행
+              }}>로그아웃</Link>
+            </li>
+            <li>
+              <Link to="/profile">정보수정</Link>
+            </li>
+          </>
+        ) : (
+          <>
+            <li>
+              <Link to="/login">로그인</Link>
+            </li>
+            <li>
+              <Link to="/signup">회원가입</Link>
+            </li>
+          </>
+        )}
         </ul>
       </div>
       

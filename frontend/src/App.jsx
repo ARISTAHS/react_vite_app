@@ -9,6 +9,7 @@ import Contact from "./pages/Contact.jsx";
 import Intro from "./pages/Intro.jsx";
 import Login from "./pages/Login.jsx";
 import SignUp from "./pages/Signup.jsx";
+import Profile from "./pages/Profile.jsx";
 import UserList from "./pages/UserList.jsx";
 
 
@@ -35,6 +36,10 @@ const router = createBrowserRouter([
   {
     path:"/signup",
     element:<SignUp/>,
+  },
+  {
+    path:"/profile",
+    element:<Profile/>,
   },
   {
     path:"/userList",

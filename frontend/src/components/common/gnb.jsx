@@ -1,9 +1,10 @@
 import { useState,useEffect } from "react";
-import { useNavigate } from "react-router-dom";
 import { Link } from "react-router-dom";
-import { onAuthStateChanged, signOut } from "firebase/auth";
+import { onAuthStateChanged} from "firebase/auth";
 import styled from "styled-components";
 import { auth } from "../../config/firebase";
+import LogoutButton from "./LogoutButton";
+import { useAuthState } from "react-firebase-hooks/auth";
 
 const Nav = styled.nav`
   padding: 1rem;
@@ -64,22 +65,17 @@ export default function Gnb() {
   ];
 
   const [user, setUser] = useState(null);
-  const navigate = useNavigate();
+  const [authUser] = useAuthState(auth); // 현재 로그인 상태 확인
 
   useEffect(() => {
     // 현재 로그인한 사용자 감지
     const unsubscribe = onAuthStateChanged(auth, (currentUser) => {
       setUser(currentUser);
     });
-
+  
     return () => unsubscribe(); // 구독 해제
   }, []);
 
-  const handleLogout = async () => {
-    await signOut(auth);
-    setUser(null);
-    navigate("/main");
-  };
 
   return (
     <Nav>
@@ -99,10 +95,7 @@ export default function Gnb() {
         {user ? (
           <>
             <li>
-              <Link to="#" onClick={(e)=>{
-                e.preventDefault();
-                handleLogout(); // 로그아웃 실행
-              }}>로그아웃</Link>
+              <LogoutButton />
             </li>
             <li>
               <Link to="/profile">정보수정</Link>

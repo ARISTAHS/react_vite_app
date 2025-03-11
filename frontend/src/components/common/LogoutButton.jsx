@@ -8,7 +8,7 @@ export default function LogoutButton(){
   const handleLogout = async () =>{
     try{
       await signOut(auth);
-      navigate('/');
+      navigate('/main');
     } catch(error){
       console.error("로그아웃 실패:",error);
     }

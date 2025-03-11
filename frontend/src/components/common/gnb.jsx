@@ -1,6 +1,4 @@
-import { useState,useEffect } from "react";
 import { Link } from "react-router-dom";
-import { onAuthStateChanged} from "firebase/auth";
 import styled from "styled-components";
 import { auth } from "../../config/firebase";
 import LogoutButton from "./LogoutButton";
@@ -40,14 +38,21 @@ const Nav = styled.nav`
       gap: 20px;
 
       li{
-        /* width: 60px; */
         color: #666;
         font-size: 0.9rem;
+        text-align: center;
+        height: 22px;
 
         a{
-          display: block;
+          display: inline-flex;
+          align-items: center;
           width: 100%;
-          
+          height: 100%;
+        }
+        button{
+          font-size: 0.9rem;
+          color: #666;
+          height: 100%;
         }
       }
     }
@@ -64,18 +69,7 @@ export default function Gnb() {
     { label : "Contact" , path : "contact"},
   ];
 
-  const [user, setUser] = useState(null);
   const [authUser] = useAuthState(auth); // 현재 로그인 상태 확인
-
-  useEffect(() => {
-    // 현재 로그인한 사용자 감지
-    const unsubscribe = onAuthStateChanged(auth, (currentUser) => {
-      setUser(currentUser);
-    });
-  
-    return () => unsubscribe(); // 구독 해제
-  }, []);
-
 
   return (
     <Nav>
@@ -92,7 +86,7 @@ export default function Gnb() {
       
       <div className="etc_box">
         <ul className="etc_list">
-        {user ? (
+        {authUser ? (
           <>
             <li>
               <LogoutButton />

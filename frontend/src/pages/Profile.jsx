@@ -16,50 +16,48 @@ const ProfileWrap = styled.div`
     top: 50%;
     left: 50%;
     transform: translate(-50%,-50%);
+    width: 560px;
+    height: 600px;
 
     h2{
       text-align: center;
       margin-bottom: 40px;
     }
- 
-      
     .form_inner{
       position: relative;
       padding: 0px 50px 0 20px;
       border: 1px solid #ccc;
       border-radius: 5px;
-      margin-bottom: 25px;
 
       dl{
+        display: flex;
+        align-items: center;
+        justify-content: flex-start;
+        gap: 20px;
+        margin: 20px 0;
 
         dt{
-
-          &:nth-child(2){
-          
-          }
-          &:nth-child(3){
-
-          }
+          width: 85px;
         }
         dd{
+          width: 100%;
+          height: 35px;
 
-          &:nth-child(2){
-          
+          input{
+            width: 100%;
+            height: 100%;
+            }
           }
-          &:nth-child(3){
-
+          &:nth-child(1){
+            input{
+              &:nth-child(1){
+                background: #999;
+            }
           }
-        }
-        &:nth-child(2){
           
-        }
-        &:nth-child(3){
-
         }
       }
     }
-    
-
     .buttons{
       margin-top: 40px;
       display: flex;
@@ -68,12 +66,14 @@ const ProfileWrap = styled.div`
       width: 100%;
       justify-content: center;
       button{
-        height: 100px;
-        .agreeBtn{
+        height: 60px;
+        color: #fff;
+
+        &.agreeBtn{
           width: 50%;
           background: cornflowerblue;
         }
-        .cancelBtn{
+        &.cancelBtn{
           width: 50%;
           background: #666;
         }
@@ -84,13 +84,13 @@ const ProfileWrap = styled.div`
 `;
 
 export default function ProfilePage({userData}){
-
+  console.log(userData);
   const formData = [
     {
       id: "name",
       label : "이름",
       type : "text",
-      placeholder : "이름을 입력하세요",
+      placeholder : "name",
     },
     {
       id: "email",
@@ -108,8 +108,8 @@ export default function ProfilePage({userData}){
 
   // "이름"은 변경 불가, 나머지는 상태에서 관리
   const [userForm, setUserForm] = useState({
-    email: userData.email || "",
-    password: userData.password || "",
+    email: userData?.email || "",
+    password: userData?.password || "",
   });
 
   const navigate = useNavigate();

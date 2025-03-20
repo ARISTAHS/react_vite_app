@@ -93,9 +93,9 @@
 │   │   ├── Signup.jsx     # 회원가입 페이지
 │   │   ├── UserList.jsx   # 유저 목록 페이지
 │
-│   ├── services           # API 호출 및 서비스 로직 관리
-│   │   ├── postService.js # 게시글 관련 서비스
-│   │   ├── userService.js # 유저 관련 서비스
+│   ├── api           # API 호출 및 서비스 로직 관리
+│   │   ├── postAPI.js # 게시글 관련 서비스
+│   │   ├── userAPI.js # 유저 관련 서비스
 │
 │   ├── App.jsx            # 루트 컴포넌트
 │   ├── main.jsx           # 애플리케이션 진입점

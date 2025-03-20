@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import styled from "styled-components";
-import { UpdateUser } from "../services/userService";
+import { UpdateUser } from "../api/usersAPI";
 
 const SignWrap = styled.div`
   width: 100%;

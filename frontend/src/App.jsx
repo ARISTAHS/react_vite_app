@@ -1,5 +1,6 @@
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import { createGlobalStyle } from 'styled-components';
+import { RecoilRoot } from "recoil";
 import reset from "styled-reset";
 import Layout from "./components/Layout.jsx";
 import Home from "./pages/Home.jsx";
@@ -113,8 +114,10 @@ function App() {
   
   return (
     <>
-      <GlobalStyle /> {/* 전역 스타일 적용 */}
-      <RouterProvider router={router} /> {/* RouterProvider로 라우터 설정 */}
+      <RecoilRoot>
+        <GlobalStyle /> {/* 전역 스타일 적용 */}
+        <RouterProvider router={router} /> {/* RouterProvider로 라우터 설정 */}
+      </RecoilRoot>
     </>
   )
 }

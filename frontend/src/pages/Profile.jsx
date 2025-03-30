@@ -3,7 +3,8 @@ import { useState } from "react";
 import { auth } from "../config/firebase";
 import { updateProfile } from "firebase/auth";
 import { useNavigate } from "react-router-dom";
-import PropTypes from "prop-types";
+import { useRecoilValue } from "recoil";
+import { userState } from "../recoil/userAtom";
 
 const ProfileWrap = styled.div`
   width: 100%;
@@ -83,8 +84,7 @@ const ProfileWrap = styled.div`
  
 `;
 
-export default function ProfilePage({userData}){
-  console.log(userData);
+export default function ProfilePage(){
   const formData = [
     {
       id: "name",
@@ -105,11 +105,13 @@ export default function ProfilePage({userData}){
       placeholder : "비밀번호를 입력하세요",
     },
   ];
+  
+  const user = useRecoilValue(userState);
 
   // "이름"은 변경 불가, 나머지는 상태에서 관리
   const [userForm, setUserForm] = useState({
-    email: userData?.email || "",
-    password: userData?.password || "",
+    email: user.email || "",
+    password: "",
   });
 
   const navigate = useNavigate();
@@ -180,10 +182,4 @@ export default function ProfilePage({userData}){
   
 }
 
-// userData를 props로 받고 있으나 타입 겁증이 안되어 경고 발생. userData구조 정의
-ProfilePage.propTypes = {
-  userData: PropTypes.shape({
-    email: PropTypes.string.isRequired,
-    password: PropTypes.string.isRequired,
-  }).isRequired,
-};
+

@@ -5,7 +5,8 @@ import { useNavigate } from "react-router-dom";
 import { signInWithEmailAndPassword } from "firebase/auth";
 import { auth } from "../config/firebase";
 import ErrorMsg from "../components/ui/ErrorMsg.jsx";
-
+import { useSetRecoilState } from "recoil";
+import { userState } from "../recoil/userAtom.js"; 
 
 const LoginWrap = styled.div`
   .form_wrap{
@@ -98,6 +99,7 @@ const LoginWrap = styled.div`
 export default function Login(){
 
   const navigate = useNavigate();
+  const setUser = useSetRecoilState(userState);
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
   const [error, setError] = useState("");
@@ -143,7 +145,15 @@ export default function Login(){
 
     try {
       // Firebase 로그인 요청
-      await signInWithEmailAndPassword(auth, username, password);
+      const userCredential = await signInWithEmailAndPassword(auth, username, password);
+      const user = userCredential.user;
+
+      // Recoil 상태에 로그인 유저 정보 저장
+      setUser({
+        email: user.email,
+        uid: user.uid,
+      });
+      
       navigate("/main"); // 로그인 성공 시 메인 페이지로 이동
     } catch (error) {
       console.error("로그인 오류:", error);

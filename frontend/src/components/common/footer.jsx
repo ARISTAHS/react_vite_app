@@ -1,6 +1,7 @@
 import styled from "styled-components";
 import { Link } from "react-router-dom";
 import logoBlack from '/assets/main_logo_black.png';
+import TopButton from "../ui/TopButton";
 
 const FooterWrapper = styled.footer`
   background-color: #333;
@@ -114,6 +115,7 @@ export default function Footer(){
 
   return(
     <FooterWrapper>
+      <TopButton />
       <FooterWrap>
         <FooterLogo>
           <Link to='/'>

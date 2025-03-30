@@ -28,6 +28,9 @@
 ![Git](https://img.shields.io/badge/Git-F05032?style=flat-square&logo=git&logoColor=white)
 ![GitHub](https://img.shields.io/badge/GitHub-181717?style=flat-square&logo=github&logoColor=white)
 
+  ### 상태관리 라이브러리
+![Recoil](https://img.shields.io/badge/Recoil-white?style=flat-square&logo=recoil&logoColor=blue)
+
 
 ## 📌포폴 파일 구조 ※추후 변동 가능
 
@@ -93,9 +96,12 @@
 │   │   ├── Signup.jsx     # 회원가입 페이지
 │   │   ├── UserList.jsx   # 유저 목록 페이지
 │
-│   ├── api           # API 호출 및 서비스 로직 관리
+│   ├── api            # API 호출 및 서비스 로직 관리
 │   │   ├── postAPI.js # 게시글 관련 서비스
 │   │   ├── userAPI.js # 유저 관련 서비스
+│
+│   ├── recoil           # 상태관리 관리
+│   │   ├── userAtom.js  # 유저 상태 관리
 │
 │   ├── App.jsx            # 루트 컴포넌트
 │   ├── main.jsx           # 애플리케이션 진입점

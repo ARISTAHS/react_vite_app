@@ -35,7 +35,6 @@ const FooterLogo = styled.div`
 `;
 
 const FooterInfo = styled.div`
-  /* width: 950px; */
   flex: 1;
   color: #fff;
   
@@ -118,7 +117,7 @@ export default function Footer(){
       <TopButton />
       <FooterWrap>
         <FooterLogo>
-          <Link to='/'>
+          <Link to='/main'>
             <img src={logoBlack} alt="로고_Black" />
           </Link>
         </FooterLogo>
@@ -138,26 +137,6 @@ export default function Footer(){
                 <span>{address.txt}</span>
               </p>
             ))}
-            {/* <p>
-              <strong>주소</strong>
-              <span>서울특별시 강동구 양재대로 85길 30 이성빌딩 303호</span>
-            </p>
-            <p>
-              <strong>우편번호</strong>
-              <span>05405</span>
-            </p>
-            <p>
-              <strong>전화</strong>
-              <span>02-474-0697~8</span>
-            </p>
-            <p>
-              <strong>E-mail</strong>
-              <span>primosports@hotmail.com</span>
-            </p>
-            <p>
-              <strong>팩스</strong>
-              <span>02-483-0272</span>
-            </p> */}
           </address>
 
           <CopyRight>

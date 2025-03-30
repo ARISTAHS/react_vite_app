@@ -43,7 +43,7 @@ export default function Header(){
     <HeaderWrapper>
       <HeaderWrap>
         <Logo>
-          <Link to='/'><img src={logoBlack} alt="프리모상사 로고" /></Link>
+          <Link to='/main'><img src={logoBlack} alt="프리모상사 로고" /></Link>
         </Logo>
       
         <Gnb />

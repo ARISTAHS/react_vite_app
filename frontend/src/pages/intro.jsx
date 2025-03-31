@@ -10,9 +10,9 @@ const IntroWrap = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
-  opacity: ${({ fadeOut }) => (fadeOut ? 0 : 1)};
+  opacity: ${({ $fadeOut }) => ($fadeOut ? 0 : 1)};
   transition: opacity 1s ease-in-out;
-  pointer-events: ${({ fadeOut }) => (fadeOut ? "none" : "auto")}; 
+  pointer-events: ${({ $fadeOut }) => ($fadeOut ? "none" : "auto")}; 
 
   .intro_inner{
     width: 100%;
@@ -155,7 +155,7 @@ export default function Intro(){
   },[navigate]);
 
   return(
-    <IntroWrap fadeOut={fadeOut}>
+    <IntroWrap $fadeOut={fadeOut}>
       <div className="intro_inner">
         <h2 className="intro_tit">{IntroText.title}</h2>
         

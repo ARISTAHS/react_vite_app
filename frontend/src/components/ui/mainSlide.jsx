@@ -15,8 +15,8 @@ const SlideImage = styled.img`
   position: absolute;
   top: 0;
   left: 0;
-  opacity: ${(props) => (props.isActive ? 1 : 0)}; //투명도 1 혹은 0
-  z-index: ${(props) => (props.isActive ? 1 : 0)};
+  opacity: ${(props) => (props.$isActive ? 1 : 0)}; //투명도 1 혹은 0
+  z-index: ${(props) => (props.$isActive ? 1 : 0)};
   transition: opacity .5s ease-in-out; /* 페이드 효과를 위한 전환 시간 */
 `;
 
@@ -24,10 +24,6 @@ export default function MainSlide(){
 
   //이미지 인덱스값 변경
   const [imgIndex, setImgIndex] = useState(0);
-  // const handleSlideChange = (newIndex) => {
-  //   setImgIndex(newIndex);
-  // };
-
 
   useEffect(() => {
     const interval = setInterval(() => {
@@ -47,7 +43,7 @@ export default function MainSlide(){
           key={index}
           src={image}
           alt={`Slide ${index + 1}`}
-          isActive={index === imgIndex} // 현재 활성 상태 여부 전달
+          $isActive={index === imgIndex} // 현재 활성 상태 여부 전달
         />
       ))}
 

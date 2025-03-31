@@ -47,12 +47,7 @@ const Content_1 = styled.div`
       display: flex;
       align-items: center;
       gap: 1.875rem;
-
-      /* h2{
-        font-weight: 700;
-        font-size: 3.75rem;
-        color: #000;
-      } */
+      
       p{
         font-size: 1.125rem;
         line-height: 1.25;

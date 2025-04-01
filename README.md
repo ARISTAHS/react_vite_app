@@ -4,8 +4,9 @@
   - 주소 : "http://www.primosports.co.kr/"
   - 주소 : "https://www.allstar.de/en/"
 - 단, 타 쇼핑몰 사이트 형식으로 재구축 하지 않음.
-- 1차 Front 완성 후 2차 Back 작업.
+- 1차 Front intro, main 작업 후 2차 Back 작업.
 - Firebase 로그인 인증 연동 작업. 
+- 프론트 배포 : Vercel / 백엔드 배포 : Render 
 
 
 ## 📌사용 스택 
@@ -16,9 +17,11 @@
 ![JavaScript](https://img.shields.io/badge/JavaScript-F7DF1E?style=flat-square&logo=javascript&logoColor=black)
 
   ### Backend
-![Firebase](https://img.shields.io/badge/Firebase-FFCA28?style=flat-square&logo=Firebase&logoColor=black)
 ![Node.js](https://img.shields.io/badge/Node.js-339933?style=flat-square&logo=Node.js&logoColor=white)
 ![Express.js](https://img.shields.io/badge/Express.js-000000?style=flat-square&logo=Express&logoColor=white)
+
+  ### Backend Services (BaaS)
+![Firebase](https://img.shields.io/badge/Firebase-FFCA28?style=flat-square&logo=Firebase&logoColor=black)
 
   ### Styling
 ![Styled Components](https://img.shields.io/badge/Styled_Components-DB7093?style=flat-square&logo=styled-components&logoColor=white)
@@ -32,6 +35,10 @@
 
   ### State Management
 ![Recoil](https://img.shields.io/badge/Recoil-white?style=flat-square&logo=recoil&logoColor=blue)
+
+  ### Deployment (Hosting)  
+![Vercel](https://img.shields.io/badge/Vercel-000000?style=flat-square&logo=vercel&logoColor=white)
+![Render](https://img.shields.io/badge/Render-46E3B7?style=flat-square&logo=render&logoColor=white)
 
 
 ## 📌포폴 파일 구조 ※추후 변동 가능
@@ -115,4 +122,5 @@
 ├── package-lock.json      # npm 패키지 관리 파일
 ├── package.json           # 프론트엔드 패키지 설정 파일
 ├── vite.config.js         # Vite 설정 파일
+├── vercel.json            # Vercel 경로 설정 파일
 ```

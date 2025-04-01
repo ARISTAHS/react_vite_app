@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { auth } from "../config/firebase";
 import { updateProfile } from "firebase/auth";
 import { useNavigate } from "react-router-dom";
@@ -110,7 +110,7 @@ export default function ProfilePage(){
 
   // "이름"은 변경 불가, 나머지는 상태에서 관리
   const [userForm, setUserForm] = useState({
-    email: user.email || "",
+    email: user?.email || "",
     password: "",
   });
 
@@ -138,6 +138,15 @@ export default function ProfilePage(){
       alert("수정 중 오류가 발생했습니다.");
     }
   };
+
+  // 로그인 체크가 되었는지 확인 코드 -> 안되면 랜더링 X
+  useEffect(()=>{
+    if(!user){
+      navigate('/login');
+    }
+  },[ user, navigate ]);
+
+  if (!user) return null;
 
   return(
     <ProfileWrap>
@@ -174,7 +183,7 @@ export default function ProfilePage(){
         
         <div className="buttons">
           <button type="button" className="agreeBtn" onClick={UpdateClick}>수정하기</button>
-          <button type="button" className="cancelBtn" onClick={() => navigate("/login")}>취소하기</button>
+          <button type="button" className="cancelBtn" onClick={() => navigate("/main")}>취소하기</button>
         </div>
       </div>
     </ProfileWrap>

@@ -38,7 +38,7 @@
 
   ### Deployment (Hosting)  
 ![Vercel](https://img.shields.io/badge/Vercel-000000?style=flat-square&logo=vercel&logoColor=white)
-![Render](https://img.shields.io/badge/Render-46E3B7?style=flat-square&logo=render&logoColor=white)
+![Render](https://img.shields.io/badge/Render-white?style=flat-square&logo=render&logoColor=black)
 
 
 ## 📌포폴 파일 구조 ※추후 변동 가능

@@ -1,5 +1,5 @@
 // 사용자 관련 API
-const API_URL = "http://localhost:5000";
+const API_URL = "https://react-vite-app-iej9.onrender.com";
 
 // 모든 사용자 가져오기(GET)
 export const fetchUser = async () => {

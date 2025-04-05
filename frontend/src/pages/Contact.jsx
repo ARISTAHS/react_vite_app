@@ -1,7 +1,15 @@
+import styled from "styled-components";
+
+const Wrapper = styled.div`
+  
+`;
+
 export default function Contact(){
   return(
-    <div>
-      <h1>Welcome to the Home Page!</h1>
-    </div>
+    <Wrapper>
+      <form action="">
+
+      </form>
+    </Wrapper>
   );
 }
